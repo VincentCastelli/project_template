@@ -1,0 +1,8 @@
+## NODE 
+node_modules 
+
+## MAC OS
+.DS_Store
+
+## Production
+./dist/bundle.js
