@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './style/style.css';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -12,10 +12,11 @@ class App extends React.Component {
   }
 
   render() {
+    const { devFirstName, devLastName } = this.state;
     return (
       <div>
         <div className="title-head">
-          <h1>{`This template was created by ${this.state.devFirstName} ${this.state.devLastName}`}</h1>
+          <h1>{`This web template was created by ${devFirstName} ${devLastName}`}</h1>
         </div>
       </div>
     );

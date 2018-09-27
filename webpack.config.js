@@ -7,13 +7,16 @@ const srcDir = path.join(__dirname, '/src');
 module.exports = {
   mode: 'development',
   entry: `${srcDir}/index.jsx`,
+  output: {
+    path: `${distDir}`,
+    filename: 'bundle.js',
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        options: { presets: ['env', 'react'] },
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.css$/,
@@ -22,8 +25,5 @@ module.exports = {
     ],
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
-  output: {
-    path: `${distDir}`,
-    filename: 'bundle.js',
-  },
+  devtool: 'cheap-eval-source-map',
 };
